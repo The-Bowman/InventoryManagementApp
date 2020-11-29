@@ -127,11 +127,9 @@ namespace InventoryManagementApp
                 searchItemNumOutputLabel.Text = currentItem.getItemNum().ToString();
                 searchPriceOutputLabel.Text = currentItem.getPrice().ToString();
                 searchStockOutputLabel.Text = currentItem.getStock().ToString();
-                Console.WriteLine("\n");
-                inventory.showAllItems();
+                
                 inventory.removeItem(currentItem.getItemName());
-                Console.WriteLine("\n");
-                inventory.showAllItems();
+                
             }
             
 

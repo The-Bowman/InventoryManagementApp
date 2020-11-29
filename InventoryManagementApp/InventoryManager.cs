@@ -76,15 +76,11 @@ namespace InventoryManagementApp
             {
                 if (item.getItemName().Equals(name))
                 {
-                    if (item.getStock() == 0)
-                    {
-                        item.setStock(5);
-                    }
-                    else
-                    {
-                        Console.WriteLine("Stock of item is: " + item.getStock());
-                    }
+                    item.setStock(item.getStock() + 5);
+                    Console.WriteLine("Stock of item is: " + item.getStock());
                 }
+
+
             }
         }
 
