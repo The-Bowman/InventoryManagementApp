@@ -140,10 +140,15 @@ namespace InventoryManagementApp
             }
             else
             {
-                currentItem = inventory.GetInventoryItem(itemsList.SelectedIndex);
+                int index = itemsList.SelectedIndex;
+                currentItem = inventory.GetInventoryItem(index);
                 inventory.RestockItem(currentItem.getItemName());
+                itemsList.Items.RemoveAt(index);
+                itemsList.Items.Insert(index, InventoryItem.ItemToString(currentItem));
+                
 
             }
+            
         }
 
         private void exitButton_Click(object sender, EventArgs e)
