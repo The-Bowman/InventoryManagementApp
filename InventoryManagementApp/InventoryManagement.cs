@@ -121,7 +121,7 @@ namespace InventoryManagementApp
             searchStockOutputLabel.Text = currentItem.getStock().ToString();
             Console.WriteLine("\n");
             inventory.showAllItems();
-            // add if statement to handle outofbounds error
+            // fix runtime error
             inventory.removeItem(currentItem.getItemName());
             Console.WriteLine("\n");
             inventory.showAllItems();
