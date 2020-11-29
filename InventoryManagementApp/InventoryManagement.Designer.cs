@@ -37,23 +37,24 @@ namespace InventoryManagementApp
             this.searchByPriceLabel = new System.Windows.Forms.Label();
             this.sortButton = new System.Windows.Forms.Button();
             this.searchDisplayGroupBox = new System.Windows.Forms.GroupBox();
-            this.searchNameOutputLabel = new System.Windows.Forms.Label();
-            this.searchDescrOutputLabel = new System.Windows.Forms.Label();
-            this.searchPriceOutputLabel = new System.Windows.Forms.Label();
-            this.searchStockOutputLabel = new System.Windows.Forms.Label();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.enterNameLabel = new System.Windows.Forms.Label();
-            this.addItemNameTextBox = new System.Windows.Forms.TextBox();
-            this.enterDescrLabel = new System.Windows.Forms.Label();
-            this.addItemDescrTextBox = new System.Windows.Forms.TextBox();
-            this.enterPriceLabel = new System.Windows.Forms.Label();
-            this.enterCountLabel = new System.Windows.Forms.Label();
-            this.addItemPriceTextBox = new System.Windows.Forms.TextBox();
-            this.addCountTextBox = new System.Windows.Forms.TextBox();
-            this.addButton = new System.Windows.Forms.Button();
-            this.exitButton = new System.Windows.Forms.Button();
             this.searchItemNumOutputLabel = new System.Windows.Forms.Label();
+            this.searchStockOutputLabel = new System.Windows.Forms.Label();
+            this.searchPriceOutputLabel = new System.Windows.Forms.Label();
+            this.searchDescrOutputLabel = new System.Windows.Forms.Label();
+            this.searchNameOutputLabel = new System.Windows.Forms.Label();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.addButton = new System.Windows.Forms.Button();
+            this.addCountTextBox = new System.Windows.Forms.TextBox();
+            this.addItemPriceTextBox = new System.Windows.Forms.TextBox();
+            this.enterCountLabel = new System.Windows.Forms.Label();
+            this.enterPriceLabel = new System.Windows.Forms.Label();
+            this.addItemDescrTextBox = new System.Windows.Forms.TextBox();
+            this.enterDescrLabel = new System.Windows.Forms.Label();
+            this.addItemNameTextBox = new System.Windows.Forms.TextBox();
+            this.enterNameLabel = new System.Windows.Forms.Label();
+            this.exitButton = new System.Windows.Forms.Button();
             this.removeButton = new System.Windows.Forms.Button();
+            this.restockButton = new System.Windows.Forms.Button();
             this.searchDisplayGroupBox.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
@@ -135,23 +136,23 @@ namespace InventoryManagementApp
             this.searchDisplayGroupBox.TabStop = false;
             this.searchDisplayGroupBox.Text = "Search Results";
             // 
-            // searchNameOutputLabel
+            // searchItemNumOutputLabel
             // 
-            this.searchNameOutputLabel.AutoSize = true;
-            this.searchNameOutputLabel.Location = new System.Drawing.Point(27, 24);
-            this.searchNameOutputLabel.Name = "searchNameOutputLabel";
-            this.searchNameOutputLabel.Size = new System.Drawing.Size(20, 13);
-            this.searchNameOutputLabel.TabIndex = 0;
-            this.searchNameOutputLabel.Text = "vis";
+            this.searchItemNumOutputLabel.AutoSize = true;
+            this.searchItemNumOutputLabel.Location = new System.Drawing.Point(27, 67);
+            this.searchItemNumOutputLabel.Name = "searchItemNumOutputLabel";
+            this.searchItemNumOutputLabel.Size = new System.Drawing.Size(64, 13);
+            this.searchItemNumOutputLabel.TabIndex = 4;
+            this.searchItemNumOutputLabel.Text = "item number";
             // 
-            // searchDescrOutputLabel
+            // searchStockOutputLabel
             // 
-            this.searchDescrOutputLabel.AutoSize = true;
-            this.searchDescrOutputLabel.Location = new System.Drawing.Point(26, 46);
-            this.searchDescrOutputLabel.Name = "searchDescrOutputLabel";
-            this.searchDescrOutputLabel.Size = new System.Drawing.Size(33, 13);
-            this.searchDescrOutputLabel.TabIndex = 1;
-            this.searchDescrOutputLabel.Text = "descr";
+            this.searchStockOutputLabel.AutoSize = true;
+            this.searchStockOutputLabel.Location = new System.Drawing.Point(26, 111);
+            this.searchStockOutputLabel.Name = "searchStockOutputLabel";
+            this.searchStockOutputLabel.Size = new System.Drawing.Size(34, 13);
+            this.searchStockOutputLabel.TabIndex = 3;
+            this.searchStockOutputLabel.Text = "count";
             // 
             // searchPriceOutputLabel
             // 
@@ -162,14 +163,23 @@ namespace InventoryManagementApp
             this.searchPriceOutputLabel.TabIndex = 2;
             this.searchPriceOutputLabel.Text = "price";
             // 
-            // searchStockOutputLabel
+            // searchDescrOutputLabel
             // 
-            this.searchStockOutputLabel.AutoSize = true;
-            this.searchStockOutputLabel.Location = new System.Drawing.Point(26, 111);
-            this.searchStockOutputLabel.Name = "searchStockOutputLabel";
-            this.searchStockOutputLabel.Size = new System.Drawing.Size(34, 13);
-            this.searchStockOutputLabel.TabIndex = 3;
-            this.searchStockOutputLabel.Text = "count";
+            this.searchDescrOutputLabel.AutoSize = true;
+            this.searchDescrOutputLabel.Location = new System.Drawing.Point(26, 46);
+            this.searchDescrOutputLabel.Name = "searchDescrOutputLabel";
+            this.searchDescrOutputLabel.Size = new System.Drawing.Size(33, 13);
+            this.searchDescrOutputLabel.TabIndex = 1;
+            this.searchDescrOutputLabel.Text = "descr";
+            // 
+            // searchNameOutputLabel
+            // 
+            this.searchNameOutputLabel.AutoSize = true;
+            this.searchNameOutputLabel.Location = new System.Drawing.Point(27, 24);
+            this.searchNameOutputLabel.Name = "searchNameOutputLabel";
+            this.searchNameOutputLabel.Size = new System.Drawing.Size(20, 13);
+            this.searchNameOutputLabel.TabIndex = 0;
+            this.searchNameOutputLabel.Text = "vis";
             // 
             // groupBox1
             // 
@@ -190,46 +200,29 @@ namespace InventoryManagementApp
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Add Item";
             // 
-            // enterNameLabel
+            // addButton
             // 
-            this.enterNameLabel.AutoSize = true;
-            this.enterNameLabel.Location = new System.Drawing.Point(31, 16);
-            this.enterNameLabel.Name = "enterNameLabel";
-            this.enterNameLabel.Size = new System.Drawing.Size(61, 13);
-            this.enterNameLabel.TabIndex = 0;
-            this.enterNameLabel.Text = "Item Name:";
+            this.addButton.Location = new System.Drawing.Point(443, 13);
+            this.addButton.Name = "addButton";
+            this.addButton.Size = new System.Drawing.Size(75, 55);
+            this.addButton.TabIndex = 8;
+            this.addButton.Text = "Add";
+            this.addButton.UseVisualStyleBackColor = true;
+            this.addButton.Click += new System.EventHandler(this.addButton_Click);
             // 
-            // addItemNameTextBox
+            // addCountTextBox
             // 
-            this.addItemNameTextBox.Location = new System.Drawing.Point(98, 13);
-            this.addItemNameTextBox.Name = "addItemNameTextBox";
-            this.addItemNameTextBox.Size = new System.Drawing.Size(100, 20);
-            this.addItemNameTextBox.TabIndex = 1;
+            this.addCountTextBox.Location = new System.Drawing.Point(299, 48);
+            this.addCountTextBox.Name = "addCountTextBox";
+            this.addCountTextBox.Size = new System.Drawing.Size(100, 20);
+            this.addCountTextBox.TabIndex = 7;
             // 
-            // enterDescrLabel
+            // addItemPriceTextBox
             // 
-            this.enterDescrLabel.AutoSize = true;
-            this.enterDescrLabel.Location = new System.Drawing.Point(6, 51);
-            this.enterDescrLabel.Name = "enterDescrLabel";
-            this.enterDescrLabel.Size = new System.Drawing.Size(86, 13);
-            this.enterDescrLabel.TabIndex = 2;
-            this.enterDescrLabel.Text = "Item Description:";
-            // 
-            // addItemDescrTextBox
-            // 
-            this.addItemDescrTextBox.Location = new System.Drawing.Point(98, 48);
-            this.addItemDescrTextBox.Name = "addItemDescrTextBox";
-            this.addItemDescrTextBox.Size = new System.Drawing.Size(100, 20);
-            this.addItemDescrTextBox.TabIndex = 3;
-            // 
-            // enterPriceLabel
-            // 
-            this.enterPriceLabel.AutoSize = true;
-            this.enterPriceLabel.Location = new System.Drawing.Point(236, 16);
-            this.enterPriceLabel.Name = "enterPriceLabel";
-            this.enterPriceLabel.Size = new System.Drawing.Size(57, 13);
-            this.enterPriceLabel.TabIndex = 4;
-            this.enterPriceLabel.Text = "Item Price:";
+            this.addItemPriceTextBox.Location = new System.Drawing.Point(299, 13);
+            this.addItemPriceTextBox.Name = "addItemPriceTextBox";
+            this.addItemPriceTextBox.Size = new System.Drawing.Size(100, 20);
+            this.addItemPriceTextBox.TabIndex = 6;
             // 
             // enterCountLabel
             // 
@@ -240,29 +233,46 @@ namespace InventoryManagementApp
             this.enterCountLabel.TabIndex = 5;
             this.enterCountLabel.Text = "Stock Count:";
             // 
-            // addItemPriceTextBox
+            // enterPriceLabel
             // 
-            this.addItemPriceTextBox.Location = new System.Drawing.Point(299, 13);
-            this.addItemPriceTextBox.Name = "addItemPriceTextBox";
-            this.addItemPriceTextBox.Size = new System.Drawing.Size(100, 20);
-            this.addItemPriceTextBox.TabIndex = 6;
+            this.enterPriceLabel.AutoSize = true;
+            this.enterPriceLabel.Location = new System.Drawing.Point(236, 16);
+            this.enterPriceLabel.Name = "enterPriceLabel";
+            this.enterPriceLabel.Size = new System.Drawing.Size(57, 13);
+            this.enterPriceLabel.TabIndex = 4;
+            this.enterPriceLabel.Text = "Item Price:";
             // 
-            // addCountTextBox
+            // addItemDescrTextBox
             // 
-            this.addCountTextBox.Location = new System.Drawing.Point(299, 48);
-            this.addCountTextBox.Name = "addCountTextBox";
-            this.addCountTextBox.Size = new System.Drawing.Size(100, 20);
-            this.addCountTextBox.TabIndex = 7;
+            this.addItemDescrTextBox.Location = new System.Drawing.Point(98, 48);
+            this.addItemDescrTextBox.Name = "addItemDescrTextBox";
+            this.addItemDescrTextBox.Size = new System.Drawing.Size(100, 20);
+            this.addItemDescrTextBox.TabIndex = 3;
             // 
-            // addButton
+            // enterDescrLabel
             // 
-            this.addButton.Location = new System.Drawing.Point(443, 13);
-            this.addButton.Name = "addButton";
-            this.addButton.Size = new System.Drawing.Size(75, 55);
-            this.addButton.TabIndex = 8;
-            this.addButton.Text = "Add";
-            this.addButton.UseVisualStyleBackColor = true;
-            this.addButton.Click += new System.EventHandler(this.addButton_Click);
+            this.enterDescrLabel.AutoSize = true;
+            this.enterDescrLabel.Location = new System.Drawing.Point(6, 51);
+            this.enterDescrLabel.Name = "enterDescrLabel";
+            this.enterDescrLabel.Size = new System.Drawing.Size(86, 13);
+            this.enterDescrLabel.TabIndex = 2;
+            this.enterDescrLabel.Text = "Item Description:";
+            // 
+            // addItemNameTextBox
+            // 
+            this.addItemNameTextBox.Location = new System.Drawing.Point(98, 13);
+            this.addItemNameTextBox.Name = "addItemNameTextBox";
+            this.addItemNameTextBox.Size = new System.Drawing.Size(100, 20);
+            this.addItemNameTextBox.TabIndex = 1;
+            // 
+            // enterNameLabel
+            // 
+            this.enterNameLabel.AutoSize = true;
+            this.enterNameLabel.Location = new System.Drawing.Point(31, 16);
+            this.enterNameLabel.Name = "enterNameLabel";
+            this.enterNameLabel.Size = new System.Drawing.Size(61, 13);
+            this.enterNameLabel.TabIndex = 0;
+            this.enterNameLabel.Text = "Item Name:";
             // 
             // exitButton
             // 
@@ -274,15 +284,6 @@ namespace InventoryManagementApp
             this.exitButton.UseVisualStyleBackColor = true;
             this.exitButton.Click += new System.EventHandler(this.exitButton_Click);
             // 
-            // searchItemNumOutputLabel
-            // 
-            this.searchItemNumOutputLabel.AutoSize = true;
-            this.searchItemNumOutputLabel.Location = new System.Drawing.Point(27, 67);
-            this.searchItemNumOutputLabel.Name = "searchItemNumOutputLabel";
-            this.searchItemNumOutputLabel.Size = new System.Drawing.Size(64, 13);
-            this.searchItemNumOutputLabel.TabIndex = 4;
-            this.searchItemNumOutputLabel.Text = "item number";
-            // 
             // removeButton
             // 
             this.removeButton.Location = new System.Drawing.Point(701, 150);
@@ -293,12 +294,23 @@ namespace InventoryManagementApp
             this.removeButton.UseVisualStyleBackColor = true;
             this.removeButton.Click += new System.EventHandler(this.button1_Click);
             // 
+            // restockButton
+            // 
+            this.restockButton.Location = new System.Drawing.Point(701, 180);
+            this.restockButton.Name = "restockButton";
+            this.restockButton.Size = new System.Drawing.Size(75, 23);
+            this.restockButton.TabIndex = 12;
+            this.restockButton.Text = "Restock";
+            this.restockButton.UseVisualStyleBackColor = true;
+            this.restockButton.Click += new System.EventHandler(this.restockButton_Click);
+            // 
             // InventoryManagement
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Control;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.restockButton);
             this.Controls.Add(this.removeButton);
             this.Controls.Add(this.exitButton);
             this.Controls.Add(this.groupBox1);
@@ -348,6 +360,7 @@ namespace InventoryManagementApp
         private System.Windows.Forms.Button exitButton;
         private System.Windows.Forms.Label searchItemNumOutputLabel;
         private System.Windows.Forms.Button removeButton;
+        private System.Windows.Forms.Button restockButton;
     }
 }
 

@@ -10,22 +10,25 @@ namespace InventoryManagementApp
     {
         private List<InventoryItem> inventory;
 
-
+        // constructors
         public InventoryManager()
         {
             inventory = new List<InventoryItem>();
         }
 
+        // returns an inventory item at the specified index
         public InventoryItem GetInventoryItem(int index)
         {
             return inventory[index];
         }
 
+        // adds item to inventory
         public void addItem(InventoryItem item)
         {
             inventory.Add(item);
         }
 
+        // removes item from inventory
         public bool removeItem(string name)
         {
             bool success = false;
@@ -41,6 +44,7 @@ namespace InventoryManagementApp
             return success;
         }
 
+        // searches inventory for item by name
         public InventoryItem SearchByName(string name)
         {
             InventoryItem temp = new InventoryItem("Item not found", "Item not found", 0000, 0.00, 0);
@@ -55,6 +59,7 @@ namespace InventoryManagementApp
             return temp;
         }
 
+        // searches inventory for item by price
         public InventoryItem SearchByPrice(double price)
         {
             InventoryItem temp = new InventoryItem("Item not found", "Item not found", 0000, 0.00, 0);
@@ -70,6 +75,7 @@ namespace InventoryManagementApp
             return temp;
         }
 
+        // restocks item specified by name
         public void RestockItem(string name)
         {
             foreach (InventoryItem item in inventory)
@@ -84,11 +90,13 @@ namespace InventoryManagementApp
             }
         }
 
+        // size of List
         public int Size()
         {
             return inventory.Count;
         }
 
+        // prints all elements and fields to console
         public void showAllItems()
         {
             foreach (InventoryItem item in inventory)
@@ -102,6 +110,7 @@ namespace InventoryManagementApp
             }
         }
 
+        // sorts inventory alphabetically
         public void Sort()
         {
             inventory.Sort();

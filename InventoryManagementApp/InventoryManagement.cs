@@ -15,7 +15,7 @@ namespace InventoryManagementApp
 
         private InventoryItem currentItem;
         private InventoryManager inventory = new InventoryManager();
-        ListBox itemsList = new ListBox();
+        ListBox itemsList = new ListBox(); // populated programmatically
 
 
         public InventoryManagement()
@@ -43,12 +43,15 @@ namespace InventoryManagementApp
 
             name = addItemNameTextBox.Text;
             descr = addItemDescrTextBox.Text;
+
+            // prevents items from being added if error in price
             if (!double.TryParse(addItemPriceTextBox.Text, out price))
             {
                 MessageBox.Show("Price entered is not a number \nItem not added");
                 return;
             } 
             
+            // prevents items from being added if error in count
             if (!int.TryParse(addCountTextBox.Text, out count))
             {
                 MessageBox.Show("Stock count entered is not a whole integer \nItem not added");
@@ -63,6 +66,7 @@ namespace InventoryManagementApp
 
         }
 
+        // sorts inventory and itemsListBox
         private void sortButton_Click(object sender, EventArgs e)
         {
             itemsList.Items.Clear();
@@ -75,6 +79,7 @@ namespace InventoryManagementApp
             
         }
 
+        // searches inventory by name, outputs to result group
         private void searchByNameButton_Click(object sender, EventArgs e)
         {
             currentItem = inventory.SearchByName(searchNameTextBox.Text);
@@ -86,6 +91,7 @@ namespace InventoryManagementApp
 
         }
 
+        // searches inventory by price, outputs to result group
         private void searchByPriceButton_Click(object sender, EventArgs e)
         {
             double price;
@@ -103,36 +109,46 @@ namespace InventoryManagementApp
                 MessageBox.Show("Price entered is not valid");
             }
             
-        }
+        }       
 
-        private void exitButton_Click(object sender, EventArgs e)
-        {
-            this.Close();
-        }
-
+        // removes item from items ListBox and inventory
         private void button1_Click(object sender, EventArgs e)
         {
             
             if (itemsList.SelectedIndex == -1)
             {
-
                 MessageBox.Show("No item selected");
                 return;
             } else
             {
                 currentItem = inventory.GetInventoryItem(itemsList.SelectedIndex);
-                itemsList.Items.RemoveAt(itemsList.SelectedIndex);
-                searchNameOutputLabel.Text = currentItem.getItemName();
-                searchDescrOutputLabel.Text = currentItem.getDescr();
-                searchItemNumOutputLabel.Text = currentItem.getItemNum().ToString();
-                searchPriceOutputLabel.Text = currentItem.getPrice().ToString();
-                searchStockOutputLabel.Text = currentItem.getStock().ToString();
-                
+                itemsList.Items.RemoveAt(itemsList.SelectedIndex); 
                 inventory.removeItem(currentItem.getItemName());
                 
             }
             
 
+        }
+
+        // restocks seleced item
+        private void restockButton_Click(object sender, EventArgs e)
+        {
+            if (itemsList.SelectedIndex == -1)
+            {
+                MessageBox.Show("No item selected");
+                return;
+            }
+            else
+            {
+                currentItem = inventory.GetInventoryItem(itemsList.SelectedIndex);
+                inventory.RestockItem(currentItem.getItemName());
+
+            }
+        }
+
+        private void exitButton_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

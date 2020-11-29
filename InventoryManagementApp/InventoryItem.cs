@@ -104,12 +104,14 @@ namespace InventoryManagementApp
             Console.WriteLine();
         }
 
+        // converts item to string
         public static string ItemToString(InventoryItem item)
         {
             return item.getItemName() + "; " + item.getDescr() + "; " + item.getItemNum().ToString() + "; " 
                 + item.getPrice().ToString() + "; " + item.getStock().ToString();
         }
 
+        // compares item name for sort method
         public int CompareTo(InventoryItem item)
         {
             return this.name.CompareTo(item.name);
