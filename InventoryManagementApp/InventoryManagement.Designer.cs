@@ -53,7 +53,7 @@ namespace InventoryManagementApp
             this.addButton = new System.Windows.Forms.Button();
             this.exitButton = new System.Windows.Forms.Button();
             this.searchItemNumOutputLabel = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
+            this.removeButton = new System.Windows.Forms.Button();
             this.searchDisplayGroupBox.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
@@ -283,15 +283,15 @@ namespace InventoryManagementApp
             this.searchItemNumOutputLabel.TabIndex = 4;
             this.searchItemNumOutputLabel.Text = "item number";
             // 
-            // button1
+            // removeButton
             // 
-            this.button1.Location = new System.Drawing.Point(701, 150);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 11;
-            this.button1.Text = "Remove";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.removeButton.Location = new System.Drawing.Point(701, 150);
+            this.removeButton.Name = "removeButton";
+            this.removeButton.Size = new System.Drawing.Size(75, 23);
+            this.removeButton.TabIndex = 11;
+            this.removeButton.Text = "Remove";
+            this.removeButton.UseVisualStyleBackColor = true;
+            this.removeButton.Click += new System.EventHandler(this.button1_Click);
             // 
             // InventoryManagement
             // 
@@ -299,7 +299,7 @@ namespace InventoryManagementApp
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Control;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.removeButton);
             this.Controls.Add(this.exitButton);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.searchDisplayGroupBox);
@@ -347,7 +347,7 @@ namespace InventoryManagementApp
         private System.Windows.Forms.Label enterNameLabel;
         private System.Windows.Forms.Button exitButton;
         private System.Windows.Forms.Label searchItemNumOutputLabel;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button removeButton;
     }
 }
 

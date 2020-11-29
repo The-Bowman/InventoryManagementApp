@@ -112,19 +112,28 @@ namespace InventoryManagementApp
 
         private void button1_Click(object sender, EventArgs e)
         {
-            currentItem = inventory.GetInventoryItem(itemsList.SelectedIndex);
-            itemsList.Items.RemoveAt(itemsList.SelectedIndex);
-            searchNameOutputLabel.Text = currentItem.getItemName();
-            searchDescrOutputLabel.Text = currentItem.getDescr();
-            searchItemNumOutputLabel.Text = currentItem.getItemNum().ToString();
-            searchPriceOutputLabel.Text = currentItem.getPrice().ToString();
-            searchStockOutputLabel.Text = currentItem.getStock().ToString();
-            Console.WriteLine("\n");
-            inventory.showAllItems();
-            // fix runtime error
-            inventory.removeItem(currentItem.getItemName());
-            Console.WriteLine("\n");
-            inventory.showAllItems();
+            
+            if (itemsList.SelectedIndex == -1)
+            {
+
+                MessageBox.Show("No item selected");
+                return;
+            } else
+            {
+                currentItem = inventory.GetInventoryItem(itemsList.SelectedIndex);
+                itemsList.Items.RemoveAt(itemsList.SelectedIndex);
+                searchNameOutputLabel.Text = currentItem.getItemName();
+                searchDescrOutputLabel.Text = currentItem.getDescr();
+                searchItemNumOutputLabel.Text = currentItem.getItemNum().ToString();
+                searchPriceOutputLabel.Text = currentItem.getPrice().ToString();
+                searchStockOutputLabel.Text = currentItem.getStock().ToString();
+                Console.WriteLine("\n");
+                inventory.showAllItems();
+                inventory.removeItem(currentItem.getItemName());
+                Console.WriteLine("\n");
+                inventory.showAllItems();
+            }
+            
 
         }
     }
